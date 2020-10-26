@@ -22,7 +22,9 @@ cd xroad-rest-soap-adapters/
 
 ### Red Hat
 
-TODO
+```
+./install-docker-red-hat.sh
+```
 
 ## Deploy REST and SOAP adapters as a system service with Docker Compose
 
