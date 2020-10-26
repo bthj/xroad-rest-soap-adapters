@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  xroad-soap-adapter:
+    image: bthj/xroad-universal-soap
+    ports:
+      - "5080:5080"
+      - "5443:5443"
+    environment:
+      KEY: "${KEY}"
+      CERT: "${CERT}"
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        tag: "xroad-soap-adapter"
+
+  xroad-rest-adapter:
+    image: bthj/xroad-rest-adapter-service
+    ports:
+      - "6080:8080"
+    restart: always
+    logging:
+      driver: syslog
+      options:
+        tag: "xroad-rest-adapter"
