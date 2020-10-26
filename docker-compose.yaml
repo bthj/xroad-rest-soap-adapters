@@ -19,6 +19,10 @@ services:
     image: bthj/xroad-rest-adapter-service
     ports:
       - "6080:8080"
+    volumes:
+      - /etc/rest-adapter-service:/etc/rest-adapter-service
+    environment:
+      - JAVA_OPTS=-DpropertiesDirectory=/etc/rest-adapter-service
     restart: always
     logging:
       driver: syslog

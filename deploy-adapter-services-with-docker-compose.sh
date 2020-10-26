@@ -2,7 +2,9 @@
 SCRIPTS_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$SCRIPTS_DIR" ]]; then SCRIPTS_DIR="$PWD"; fi
 
-# based on https://gist.github.com/mosquito/b23e1c1e5723a7fd9e6568e5cf91180f
+sudo cp -R $SCRIPTS_DIR/properties/rest-adapter-service /etc/
+
+# based on https://gist.github.com/mosquito/b23e1c1e5723a7fd9e6568e5cf91180f :
 
 sudo cp docker-compose@.service /etc/systemd/system/
 

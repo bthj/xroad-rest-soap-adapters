@@ -30,6 +30,44 @@ TODO
 ./deploy-adapter-services-with-docker-compose.sh
 ```
 
+## Configure the REST adapter service
+
+### Client subsystem
+
+To have the REST adapter service communicate with the correct client X-Road subsystem, and point correctly at its Security Server, edit the file:
+
+```
+/etc/rest-adapter-service/consumer-gateway.properties
+```
+
+Set the `id.client` property so it points to the desired client subsystem:
+
+For instance, if the corresponding Security Server, in the instance `IS-DEV`, has a subsystem with configuration details like so:
+- *Member Class*:  GOV
+- *Member Code*:  10000
+- *Subsystem Code*:  island-is-client
+
+Then the property would be configured like:
+```
+id.client=IS-DEV.GOV.10000.island-is-client
+```
+
+### Security Server URL
+
+By default the `ss.url` property in `/etc/rest-adapter-service/consumer-gateway.properties` is set to `http://172.17.0.1`, where the IP `172.17.0.1` points to the machine hosting the Docker container, in which the service is running.  It could be better to refer to the host name `host.docker.internal`, but that is not possible in current stable releases of Docker (19.03.13) for Linux.
+
+If the Security Server is not listening for HTTP connections on port 80, but for instance on port 8080, which is the default when the [Security Server is installed on Red Hat](https://github.com/nordic-institute/X-Road/blob/master/doc/Manuals/ig-ss_x-road_v6_security_server_installation_guide_for_rhel.md), the URL to the Security Server hosting the client subsystem can be set like so:
+```
+ss.url=http://172.17.0.1:8080
+```
+
+### Loading configuration changes
+
+To load changes to the configuration, the REST adapter service can be restarted with the command:
+```
+sudo systemctl restart docker-compose@xroad-rest-soap-adapters
+```
+
 ## Logs
 
 System service logs can be viewed with:
