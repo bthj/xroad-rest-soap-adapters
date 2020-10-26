@@ -2,6 +2,16 @@
 
 Kind of a metapackage for the [X-Road REST Adapter Service](https://github.com/nordic-institute/REST-adapter-service) and [xroad-universal-soap](https://github.com/nanndoj/xroad-universal-soap) ([fork](https://github.com/bthj/xroad-universal-soap)) projects.  It helps with installing [Docker](https://en.wikipedia.org/wiki/Docker_(software)) and deploying a [Docker Compose](https://docs.docker.com/compose/) configuration as a system service.
 
+## Obtaining the metapackage
+
+On the host Linux machine, issue:
+```
+git clone https://github.com/bthj/xroad-rest-soap-adapters.git
+
+cd xroad-rest-soap-adapters/
+```
+
+
 ## Docker installation
 
 ### Ubuntu
