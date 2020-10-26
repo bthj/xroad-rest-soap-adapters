@@ -51,5 +51,5 @@ docker tag <tag> bthj/xroad-universal-soap
 docker push bthj/xroad-universal-soap
 ```
 Information pages for the built images are at:
-- https://hub.docker.com/repository/docker/bthj/xroad-universal-soap
-- https://hub.docker.com/repository/docker/bthj/xroad-rest-adapter-service
+- https://hub.docker.com/r/bthj/xroad-universal-soap
+- https://hub.docker.com/r/bthj/xroad-rest-adapter-service
