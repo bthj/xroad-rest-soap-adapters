@@ -3,7 +3,7 @@ SCRIPTS_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$SCRIPTS_DIR" ]]; then SCRIPTS_DIR="$PWD"; fi
 
 echo "Copying REST adaptor service configuration"
-sudo cp -R $SCRIPTS_DIR/properties/rest-adapter-service /etc/
+sudo cp -n -R $SCRIPTS_DIR/properties/rest-adapter-service /etc/
 
 # based on https://gist.github.com/mosquito/b23e1c1e5723a7fd9e6568e5cf91180f :
 
@@ -12,7 +12,7 @@ sudo cp docker-compose@.service /etc/systemd/system/
 
 echo "Deploying xroad-rest-soap-adapters Docker Compose configuration for SystemD services"
 sudo mkdir -p /etc/docker/compose/xroad-rest-soap-adapters
-sudo cp $SCRIPTS_DIR/docker-compose.yaml /etc/docker/compose/xroad-rest-soap-adapters/
+sudo cp -n $SCRIPTS_DIR/docker-compose.yaml /etc/docker/compose/xroad-rest-soap-adapters/
 
 echo "Starting docker-compose@xroad-rest-soap-adapters as a system service"
 sudo systemctl start docker-compose@xroad-rest-soap-adapters
