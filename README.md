@@ -93,6 +93,8 @@ logs/xroad-soap-adapter.sh
 
 ## Appendix
 
+### Building and publishing Docker images
+
 Example commands to build a Docker image for one of the services and push it to Docker Hub - issued from within the corresponding project:
 ```
 docker build -t xroad-universal-soap .   
@@ -103,3 +105,27 @@ docker push bthj/xroad-universal-soap
 Information pages for the built images are at:
 - https://hub.docker.com/r/bthj/xroad-universal-soap
 - https://hub.docker.com/r/bthj/xroad-rest-adapter-service
+
+### Calling the REST adapter service to a SOAP service via the universal proxy
+
+Following are example URLs calling the REST adapter service configured for one Security Server, where an example SOAP service is configured at another Security Server (COM/10002/Origo-Protected):
+
+
+- REST call:  
+http://localhost:6080/rest-adapter-service/Consumer/IS-DEV.COM.10002.Origo-Protected.NumberToWords/?ubiNum=2021&X-XRd-NamespaceSerialize=http://www.dataaccess.com/webservicesserver/&X-XRd-NamespacePrefixSerialize=web&Accept=application/json
+
+  - Corresponding SOAP service defintion:  
+  https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL  
+
+    - Added to the Security Server via the SOAP proxy using the URL:
+  https://localhost:5443/www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL
+
+
+- REST call:  
+http://localhost:6080/rest-adapter-service/Consumer/IS-DEV.COM.10002.Origo-Protected.FindPerson/?id=1&X-XRd-NamespaceSerialize=http://tempuri.org&X-XRd-NamespacePrefixSerialize=tem&Accept=application/json
+
+  - Corresponding SOAP service defintion:
+  https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL
+
+    - Added to the Security Server via the SOAP proxy using the URL:
+  https://localhost:5443/www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL
