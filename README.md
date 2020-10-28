@@ -1,6 +1,6 @@
 # X-Road REST and SOAP adapters
 
-Kind of a metapackage for the [X-Road REST Adapter Service](https://github.com/nordic-institute/REST-adapter-service) and [xroad-universal-soap](https://github.com/nanndoj/xroad-universal-soap) ([fork](https://github.com/bthj/xroad-universal-soap)) projects.  It helps with installing [Docker](https://en.wikipedia.org/wiki/Docker_(software)) and deploying a [Docker Compose](https://docs.docker.com/compose/) configuration as a system service.
+Toolset for deploying the [X-Road REST Adapter Service](https://github.com/nordic-institute/REST-adapter-service) and [xroad-universal-soap](https://github.com/nanndoj/xroad-universal-soap) proxy in tandem, as a [system service](https://en.wikipedia.org/wiki/Systemd) with [Docker Compose](https://docs.docker.com/compose/).
 
 ## Obtaining the metapackage
 
@@ -68,6 +68,11 @@ ss.url=http://172.17.0.1:8080
 To load changes to the configuration, the REST adapter service can be restarted with the command:
 ```
 sudo systemctl restart docker-compose@xroad-rest-soap-adapters
+```
+
+The status of the REST and SOAP adapters Docker Compose system service can be viewed by issuing:
+```
+sudo systemctl list-units docker-compose@xroad-rest-soap-adapters.service
 ```
 
 ## Logs
