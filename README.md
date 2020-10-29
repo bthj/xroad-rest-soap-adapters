@@ -2,6 +2,8 @@
 
 Toolset for deploying the [X-Road REST Adapter Service](https://github.com/nordic-institute/REST-adapter-service) and [xroad-universal-soap](https://github.com/nanndoj/xroad-universal-soap) proxy in tandem, as a [system service](https://en.wikipedia.org/wiki/Systemd) with [Docker Compose](https://docs.docker.com/compose/).
 
+Related discussion in the [X-Road Community](https://x-road.global/join-the-x-road-community) can be found [here](https://jointxroad.slack.com/archives/CA66FG50T/p1568646102000400?thread_ts=1568197829.006100&cid=CA66FG50T) and [here](https://jointxroad.slack.com/archives/CDBRLMZNW/p1603813289036700?thread_ts=1602609405.030800&cid=CDBRLMZNW).
+
 ## Obtaining the metapackage
 
 On the host Linux machine, issue:
