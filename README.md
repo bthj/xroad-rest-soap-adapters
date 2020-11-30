@@ -77,6 +77,15 @@ The status of the REST and SOAP adapters Docker Compose system service can be vi
 sudo systemctl list-units docker-compose@xroad-rest-soap-adapters.service
 ```
 
+## Update REST and SOAP adapters from the latest Docker images
+
+```
+cd ~/xroad-rest-soap-adapters/
+sudo docker-compose pull
+sudo systemctl restart docker-compose@xroad-rest-soap-adapters
+sudo systemctl list-units docker-compose@xroad-rest-soap-adapters.service
+```
+
 ## Logs
 
 System service logs can be viewed with:
