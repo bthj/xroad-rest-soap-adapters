@@ -109,15 +109,34 @@ logs/xroad-soap-adapter.sh
 
 ## Appendix
 
-### Building and publishing Docker images
+### Building and publishing container images
 
 Example commands to build a Docker image for one of the services and push it to Docker Hub - issued from within the corresponding project:
-```
-docker build -t xroad-universal-soap .   
-docker images
-docker tag <tag> bthj/xroad-universal-soap
-docker push bthj/xroad-universal-soap
-```
+
+- xroad-universal-soap
+
+  ```
+  docker build -t xroad-universal-soap .
+  docker images
+  docker tag <tag> bthj/xroad-universal-soap
+  docker push bthj/xroad-universal-soap
+  ```
+
+- X-Road REST Adapter Service
+
+  Build the war file, from within the project `src/` directory, with e.g.
+  ```
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+  mvn clean install
+  ```
+  Then build and push the container image, from the project root:
+  ```
+  docker build -t xroad-rest-adapter-service-rhel8 .
+  docker images
+  docker tag <tag> bthj/xroad-rest-adapter-service-rhel8
+  docker push bthj/xroad-rest-adapter-service-rhel8
+  ```
+
 Information pages for the built images are at:
 - https://hub.docker.com/r/bthj/xroad-universal-soap
 - https://hub.docker.com/r/bthj/xroad-rest-adapter-service
