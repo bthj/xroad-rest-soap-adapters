@@ -139,7 +139,9 @@ Example commands to build a Docker image for one of the services and push it to 
 
 Information pages for the built images are at:
 - https://hub.docker.com/r/bthj/xroad-universal-soap
+- https://hub.docker.com/r/bthj/xroad-universal-soap-rhel8
 - https://hub.docker.com/r/bthj/xroad-rest-adapter-service
+- https://hub.docker.com/r/bthj/xroad-rest-adapter-service-rhel8
 
 ### Calling the REST adapter service to a SOAP service via the universal proxy
 
