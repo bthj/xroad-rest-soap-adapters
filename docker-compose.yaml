@@ -6,6 +6,8 @@ services:
     ports:
       - "5080:5080"
       - "5443:5443"
+    volumes:
+      - /etc/xroad-soap-adapter:/etc/xroad-soap-adapter
     environment:
       KEY: "/etc/xroad-soap-adapter/xroad-soap-adapter.key"
       CERT: "/etc/xroad-soap-adapter/xroad-soap-adapter.crt"
