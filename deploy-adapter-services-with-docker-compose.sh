@@ -7,7 +7,7 @@ sudo cp -n -R $SCRIPTS_DIR/properties/rest-adapter-service /etc/
 
 # generate a keypair for the soap adapter container to reference, via environment variables (in docker-compose)
 sudo mkdir -p /etc/xroad-soap-adapter
-sudo openssl req -nodes -new -x509 -days 7300 \ # 10 year lifetime
+sudo openssl req -nodes -new -x509 -days 7300 \
   -keyout  /etc/xroad-soap-adapter/xroad-soap-adapter.key \
   -out /etc/xroad-soap-adapter/xroad-soap-adapter.crt \
   -subj "/C=ST/O=Local/CN=localhost"
