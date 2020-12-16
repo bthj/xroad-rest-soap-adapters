@@ -7,8 +7,8 @@ services:
       - "5080:5080"
       - "5443:5443"
     environment:
-      KEY: "${KEY}"
-      CERT: "${CERT}"
+      KEY: "/etc/xroad-soap-adapter/xroad-soap-adapter.key"
+      CERT: "/etc/xroad-soap-adapter/xroad-soap-adapter.crt"
     restart: always
     logging:
       driver: syslog
