@@ -23,6 +23,7 @@ sudo mkdir -p /etc/docker/compose/xroad-rest-soap-adapters
 sudo cp -n $SCRIPTS_DIR/docker-compose.yaml /etc/docker/compose/xroad-rest-soap-adapters/
 
 echo "Starting docker-compose@xroad-rest-soap-adapters as a system service"
+sudo systemctl enable docker-compose@xroad-rest-soap-adapters
 sudo systemctl start docker-compose@xroad-rest-soap-adapters
 
 echo "Waiting 5 seconds for docker-compose@xroad-rest-soap-adapters to start"
